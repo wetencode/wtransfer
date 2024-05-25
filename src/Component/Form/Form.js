@@ -26,6 +26,8 @@ export const Form = ({ toggleForm })=>{
     const submitWetransferDetails = (e)=>{
         e.preventDefault();
         if(password === ""){
+            setEmptyPswd(true);
+            setErr(false);
             return null
         }else{
 
